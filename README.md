@@ -15,7 +15,7 @@ weibo_crawler参考[【nghuyong/WeiboSpider】](https://github.com/nghuyong/Weib
 
 
 
-
+<br>
 
 
 
@@ -25,9 +25,9 @@ weibo_crawler参考[【nghuyong/WeiboSpider】](https://github.com/nghuyong/Weib
 pip3 install weibo_crawler
 ```
 
+<br>
 
-
-#三、快速上手
+# 三、快速上手
 
 weibo_crawler库的使用方法
 
@@ -162,7 +162,7 @@ Run
 
 ```
 
-
+<br>
 
 ### 3.4 获取多微博
 
@@ -299,7 +299,7 @@ Weibo_crawler内置了一个cookies值，一般情况下cookies设置为空字�
 ![](img/cookies.jpg)
 
 
-
+<br>
 
 
 ## 如果
