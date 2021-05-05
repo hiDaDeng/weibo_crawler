@@ -37,6 +37,8 @@ from weibo_crawler import Profile, Follow, Weibos, Comments
 
 
 
+注意：微博分PC微博和手机微博，两者的数据其实是一样的，虽然手机微博在浏览器中页面看起来很丑，但手机微博更容易采集， 本教程是对**微博手机端**设计的爬虫，手机端微博链接  https://weibo.cn/ 
+
 ### 3.1 个人简介
 
 获取某用户个人简介
@@ -162,6 +164,10 @@ Run
 {'weibo_id': 'IDl56i8av', 'comment_uid': '6577817093', 'like_num': '29', 'create_time': '2020-04-14 23:42:32', 'content': '跪求大家救救我们一家！', 'craw_time': '2021-04-30 18:33:13'}
 
 ```
+
+**微博id的获取方式**
+
+![](img/微博id.png)
 
 <br>
 
