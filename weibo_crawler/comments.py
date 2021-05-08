@@ -52,14 +52,25 @@ class Comments(object):
         except:
             doc = PyQuery(resp.content)
         comment_blocks = [block for block in doc.items("div.c") if 'C_' in str(block)]
+        comments = []
+        for comment_block in comment_blocks:
+            comment = dict()
+            try:
+                comment['weibo_id'] = weibo_id
+                comment['comment_uid'] = comment_block('a').attr('href').replace('/u/', '').replace('/', '')
+                comment['create_time'] = comment_block('.ct').text().split('\xa0')[0]
+                comment['content'] = comment_block('.ctt').text()
+                comment['craw_time'] = str(datetime.datetime.now())[:19]
+                comment['like_num'] = re.findall('\d+', comment_block('a').eq(2).text())[0]
+            except:
+                comment['weibo_id'] = weibo_id
+                comment['comment_uid'] = comment_block('a').attr('href').replace('/u/', '').replace('/', '')
+                comment['create_time'] = comment_block('.ct').text().split('\xa0')[0]
+                comment['content'] = comment_block('.ctt').text()
+                comment['craw_time'] = str(datetime.datetime.now())[:19]
+                comment['like_num'] = 0
+            comments.append(comment)
 
-        comments = [{'weibo_id': weibo_id,
-                     'comment_uid': comment('a').attr('href').replace('/u/', '').replace('/', ''),
-                     'like_num': re.findall('\d+', comment('a').eq(2).text())[0],
-                     'create_time': comment('.ct').text().split('\xa0')[0],
-                     'content': comment('.ctt').text(),
-                     'craw_time': str(datetime.datetime.now())[:19]}
-                    for comment in comment_blocks]
         with open(self.csvfile, "a+", encoding='utf-8', newline='') as csvf:
             writer = csv.DictWriter(csvf, fieldnames=self.fieldnames)
             for com in comments:
