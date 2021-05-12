@@ -327,7 +327,9 @@ Weibo_crawler内置了一个cookies值，一般情况下cookies设置为空字�
 
 感兴趣的童鞋不妨 戳一下[《python网络爬虫与文本数据分析》](https://ke.qq.com/course/482241?tuin=163164df)进来看看~
 
-![[](img/课程.png)](https://ke.qq.com/course/482241?tuin=163164df)
+
+[![](img/课程.png)](https://ke.qq.com/course/482241?tuin=163164df)
+
 <br>
 
 ## 更多
